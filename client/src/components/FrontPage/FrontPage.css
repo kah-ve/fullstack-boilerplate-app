@@ -1,7 +1,10 @@
 #front-page-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-width: 600px;
+  cursor: default;
 }
 
 .linkButtons {
@@ -20,7 +23,8 @@
 .theLink {
   background-color: #437a97;
   margin: 10px;
-  padding: 20px;
+  padding: 5px;
+  border-radius: 5px;
   color: white;
   text-decoration: none;
   text-align: center;
@@ -31,6 +35,7 @@
 .theLink:hover,
 .theLink:focus {
   background-color: #65a6c9;
+  transform: scale(1.1);
 }
 
 .theLink:active {
@@ -65,4 +70,64 @@
   margin: 100px auto 100px auto;
   border: 5px solid black;
   max-width: 1000px;
+}
+
+.outputBox {
+  margin-top: 10px;
+  background-color: teal;
+  padding: 50px;
+  border: 10px solid black;
+  border-radius: 5px;
+  width: 845px;
+  color: white;
+  font-size: 20px;
+
+  text-align: left;
+
+}
+
+.outputBox:hover,
+.outputBox:focus {
+  background-color: rgb(3, 83, 83);
+}
+
+.inputBoxes {
+  background-color: teal;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 10;
+  color: white;
+
+  text-align: left;
+
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  
+}
+
+.inputBoxes:hover {
+  background-color: rgb(62, 208, 208);
+  transform: scale(1.05);
+}
+
+.inputsAndDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.inputText {
+  width: 80px;
+  margin-left: 5px;
+  margin-right: 40px;
 }

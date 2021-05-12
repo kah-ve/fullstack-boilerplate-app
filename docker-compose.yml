@@ -25,6 +25,7 @@ services:
       - api
     environment:
       - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
 
   db:
     image: postgres:10.5
@@ -37,6 +38,9 @@ services:
       - POSTGRES_PASSWORD=password
     volumes:
       - './db/init:/docker-entrypoint-initdb.d/'
+      # - database:/var/lib/postgresql/data
+
 
 volumes:
   node_modules:
+  # database:

@@ -53,9 +53,9 @@ respective prices.
 Though the apparent result is underwhelming, this data was retrieved through an API call
  to our Flask server, which can be accessed at
 
-    http://localhost:5000/api/v1.0/test
+    http://localhost:5000//api/v1.0/createtable
     
-The trailing '*/api/v1.0/test*' is simply for looks, and can be tweaked easily
+The trailing '*/api/v1.0/createtable*' is simply for looks, and can be tweaked easily
 in [api/app.py](api/app.py). The front-end logic for consuming our API is
 contained in [client/src/index.js](client/src/index.js). The code contained within
 these files simply exists to demonstrate how our front-end might consume our back-end
