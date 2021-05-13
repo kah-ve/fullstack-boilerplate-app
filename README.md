@@ -6,7 +6,11 @@ All you need to do to run this is clone and run
    
       docker-compose up
 
-You will be able to send some data as a request from react to flask and then flask to the postgresql db. 
+Then navigate on your browser to
+
+      http://localhost:3000/
+
+Here you will a very basic react app that will be able to send some data as a request from react to flask and then flask to the postgresql db. 
 
 ### PostgreSQL Commands
 
@@ -26,7 +30,7 @@ Here you can type commands such as \l to list databases, then \c to connect to a
 
 ### React (Client side)
 
-For outputs from react, see the developer console.
+For outputs from react, see the developer console, and the network tab to get an idea of what's going on.
 
 The app currently is just for playing around with the communications between the different tiers. You can post and get which will communciate with flask, which will subsequently communicate with postgresql to then execute the respective commands.
 
