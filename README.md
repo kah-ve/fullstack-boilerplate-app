@@ -22,7 +22,7 @@ This will open up a commandline within docker that looks like
   
      postgres=# ...
   
-Here you can type commands such as \l to list databases, then \c to connect to a database, then \dt to list out the data tables within that database.
+Here you can type commands such as \l to list databases, then \c to connect to a database, then \dt to list out the data tables within that database. Also you can execute normal SQL commands such as "SELECT * FROM [table-name];" or "CREATE TABLE IF NOT EXISTS student (name text, ......);"
 
 ### React (Client side)
 
