@@ -1,5 +1,11 @@
 # React + Flask + PostgreSQL in Docker Development Boilerplate
 
+So far I've built on the boilerplate code from below. I've hooked up code that communicates through react to flask and postgresql and back.
+
+------------------
+Below is README from previous Fork.
+
+
 ## Overview
 Extremely lightweight development environment for a web application
 running a [React](https://reactjs.org/) front-end and 
