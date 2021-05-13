@@ -4,7 +4,7 @@ So far I've built on the boilerplate code from another repo that built out the d
 
 All you need to do to run this is clone and run 
    
-   docker-compose up.
+      docker-compose up.
 
 You will be able to send some data as a request from react to flask and then flask to the postgresql db. 
 
@@ -12,15 +12,15 @@ You will be able to send some data as a request from react to flask and then fla
 
 You can 
 
-  docker exec -it [container id] bash 
+     docker exec -it [container id] bash 
  
 to the postgres container and then run the command 
   
-  psql -U postgres
+     psql -U postgres
   
 This will open up a commandline within docker that looks like
   
-  postgres=# ...
+     postgres=# ...
   
 Here you can type commands such as \l to list databases, then \c to connect to a database, then \dt to list out the data tables within that database.
 
