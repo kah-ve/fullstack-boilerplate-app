@@ -1,4 +1,4 @@
-# React + Flask Development Boilerplate
+# React + Flask + PostgreSQL in Docker Development Boilerplate
 
 ## Overview
 Extremely lightweight development environment for a web application
