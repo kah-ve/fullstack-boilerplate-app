@@ -34,7 +34,7 @@ The app currently is just for playing around with the communications between the
 
 In the terminal that you ran
 
-  docker-compose up
+     docker-compose up
   
 on, you can see the containers that are running and the outputs. I use this to see the outputs from a flask. 
 
