@@ -15,7 +15,7 @@ app.config["CORS_HEADERS"] = "Content-Type"
 def insert_data():
 
     data = json.loads(request.data)
-    print(data, file=sys.stderr)
+    print(f"The request data to insert: {data}", file=sys.stderr)
 
     con = psycopg2.connect(
         database="campsite",
@@ -25,35 +25,52 @@ def insert_data():
         port="5432",
     )
     cur = con.cursor()
+    cur.execute(
+        f"""CREATE TABLE IF NOT EXISTS STUDENT"""
+        f"""(ADMISSION INT PRIMARY KEY NOT NULL,"""
+        f"""NAME TEXT NOT NULL,"""
+        f"""AGE INT NOT NULL,"""
+        f"""COURSE CHAR(50),"""
+        f"""DEPARTMENT CHAR(50));"""
+    )
 
-    cur.execute("SELECT count(*) FROM student WHERE admission=10;")
+    cur.execute(
+        f"SELECT count(*) FROM student WHERE admission={data['admission']};"
+    )
 
     fetch_one = cur.fetchone()
     count = fetch_one[0]
+    print(f"The count of existing entries. {count}", file=sys.stderr)
 
     if count == 1:
+        print(f"Updating only! Admission key already exists!", file=sys.stderr)
+
         # Update
         cur.execute(
-            f"""UPDATE student 
-            SET name={data['name']}, 
-            age={data['age']}, 
-            course={data['course']}, 
-            department={data['department']},
-            WHERE admission={data['admission']};"""
+            f"""UPDATE student """
+            f"""SET name='{data['name']}',"""
+            f"""age={data['age']},"""
+            f"""course='{data['course']}',"""
+            f"""department='{data['department']}' """
+            f"""WHERE admission='{data['admission']}';"""
         )
     else:
+        print(f"Inserting new entry!", file=sys.stderr)
+
         # Insert
         cur.execute(
-            f"""INSERT INTO student 
-            VALUES ('{data['name']}', 
-            {data['age']}, 
-            '{data['course']}', 
-            '{data['department']}',
-            WHERE admission='{data['admission']}';"""
+            f"""INSERT INTO student"""
+            f""" VALUES ("""
+            f"""{data['admission']}, """
+            f"""'{data['name']}',"""
+            f"""{data['age']},"""
+            f"""'{data['course']}',"""
+            f"""'{data['department']}');"""
         )
 
     # print(, file=sys.stderr)
-
+    con.commit()
+    con.close()
     return ""
 
 
@@ -74,23 +91,9 @@ def test_response():
 
     cur = con.cursor()
 
-    cur.execute(
-        """CREATE TABLE IF NOT EXISTS STUDENT
-            (ADMISSION INT PRIMARY KEY NOT NULL,
-            NAME TEXT NOT NULL,
-            AGE INT NOT NULL,
-            COURSE CHAR(50),
-            DEPARTMENT CHAR(50));"""
-    )
-
-    # cur.execute(
-    #     """INSERT INTO STUDENT VALUES (10, 'John', 25, 'Math', 'Sciences');"""
-    # )
-
-    cur.execute("SELECT * FROM STUDENT;")
-    # output = cur.fetchall()
-    output = {}
-    print(f"The output is {output}")
+    cur.execute("SELECT * FROM student;")
+    output = cur.fetchall()
+    print(f"The output is {output}", file=sys.stderr)
 
     con.commit()
     con.close()
