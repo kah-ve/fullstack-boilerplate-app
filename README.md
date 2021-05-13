@@ -2,9 +2,49 @@
 
 So far I've built on the boilerplate code from below. I've hooked up code that communicates through react to flask and postgresql and back.
 
-------------------
-Below is README from previous Fork.
 
+
+All you need to do to run this is clone and run 
+   
+   docker-compose up.
+
+You will be able to send some data as a request from react to flask and then flask to the postgresql db. 
+
+### PostgreSQL Commands
+
+You can 
+
+  docker exec -it [container id] bash 
+ 
+to the postgres container and then run the command 
+  
+  psql -U postgres
+  
+This will open up a commandline within docker that looks like
+  
+  postgres=# ...
+  
+Here you can type commands such as \l to list databases, then \c to connect to a database, then \dt to list out the data tables within that database.
+
+### React (Client side)
+
+For outputs from react, see the developer console.
+
+The app currently is just for playing around with the communications between the different tiers. You can post and get which will communciate with flask, which will subsequently communicate with postgresql to then execute the respective commands.
+
+### Flask (API side)
+
+In the terminal that you ran
+
+  docker-compose up
+  
+on, you can see the containers that are running and the outputs. I use this to see the outputs from a flask. 
+
+
+
+--------------------------------------------------------
+Below is README from another repo I built off of.
+--------------------------------------------------------
 
 ## Overview
 Extremely lightweight development environment for a web application
