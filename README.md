@@ -1,6 +1,6 @@
 # React + Flask + PostgreSQL in Docker Development Boilerplate
 
-![My Image](https://github.com/kah-ve/campsite-notifier/blob/master/app-preview.PNG)
+![My Image](https://github.com/kah-ve/react-flask-postgresql-in-docker-boilerplate/blob/master/app-preview.png)
 
 
 So far I've built on the boilerplate code from another repo that built out the docker-compose file (minus some things I've since modified). I've hooked up code that communicates through react to flask and postgresql and back.
