@@ -4,7 +4,7 @@ So far I've built on the boilerplate code from another repo that built out the d
 
 All you need to do to run this is clone and run 
    
-      docker-compose up.
+      docker-compose up
 
 You will be able to send some data as a request from react to flask and then flask to the postgresql db. 
 
