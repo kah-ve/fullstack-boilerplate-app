@@ -52,7 +52,7 @@ In the terminal that you ran
 on, you can see the containers that are running and the outputs. I use this to see the outputs from a flask. 
 
 --------------------------------------------------------
-Notes on this Repo (provided by the repo owner that provided the core boilerplate code for docker-compose)
+Below are notes from source repo that provided core boilerplate code for docker-compose.
 [Link](https://github.com/shoyo/react-flask-docker-boilerplate)
 --------------------------------------------------------
 
