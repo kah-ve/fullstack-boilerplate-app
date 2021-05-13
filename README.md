@@ -10,7 +10,7 @@ Then navigate on your browser to
 
       http://localhost:3000/
 
-Here you will a very basic react app that will be able to send some data as a request from react to flask and then flask to the postgresql db. 
+Here you will see a very basic react app that will be able to send some data as a request from react to flask and then flask to the postgresql db. 
 
 ### PostgreSQL Commands
 
