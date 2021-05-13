@@ -1,4 +1,60 @@
-# React + Flask Development Boilerplate
+# React + Flask + PostgreSQL in Docker Development Boilerplate
+
+So far I've built on the boilerplate code from another repo that built out the docker-compose file (minus some things I've since modified). I've hooked up code that communicates through react to flask and postgresql and back.
+
+All you need to do to run this is clone and build with
+
+      docker-compose build
+      
+then run with
+   
+      docker-compose up
+
+Then navigate on your browser to
+
+      http://localhost:3000/
+
+Here you will see a very basic react app that will be able to send some data as a request from react to flask and then from flask to the postgresql db. 
+
+### PostgreSQL Commands
+
+You can 
+
+     docker exec -it [container id] bash 
+ 
+to the postgres container and then run the command 
+  
+     psql -U postgres
+  
+This will open up a commandline within docker that looks like
+  
+     postgres=# ...
+  
+Here you can type commands such as \l to list databases, then \c to connect to a database, then \dt to list out the data tables within that database. Also you can execute normal SQL commands such as 
+      
+      "SELECT * FROM [table-name];" 
+or 
+
+      "CREATE TABLE IF NOT EXISTS [table-name] (name text, ......);"
+
+### React (Client side)
+
+For outputs from react, see the developer console, and the network tab to get an idea of what's going on.
+
+The app currently is just for playing around with the communications between the different tiers. You can post and get which will communciate with flask, which will subsequently communicate with postgresql to then execute the respective commands.
+
+### Flask (API side)
+
+In the terminal that you ran
+
+     docker-compose up
+  
+on, you can see the containers that are running and the outputs. I use this to see the outputs from a flask. 
+
+--------------------------------------------------------
+Below are notes from source repo that provided core boilerplate code for docker-compose.
+[Link](https://github.com/shoyo/react-flask-docker-boilerplate)
+--------------------------------------------------------
 
 ## Overview
 Extremely lightweight development environment for a web application
@@ -48,33 +104,10 @@ and React (on port 3000). Head over to
 
     http://localhost:3000/ 
     
-to view an incredibly underwhelming React webpage listing two fruits and their
-respective prices. 
-Though the apparent result is underwhelming, this data was retrieved through an API call
- to our Flask server, which can be accessed at
-
-    http://localhost:5000//api/v1.0/createtable
-    
-The trailing '*/api/v1.0/createtable*' is simply for looks, and can be tweaked easily
-in [api/app.py](api/app.py). The front-end logic for consuming our API is
-contained in [client/src/index.js](client/src/index.js). The code contained within
-these files simply exists to demonstrate how our front-end might consume our back-end
-API.
-
 Finally, to gracefully stop running our local servers, you can run
  
     docker-compose down
 
 in a separate terminal window or press __control + C__.
-
-
-## Future plans
-* Add boilerplate for running tests locally and through continuous integration.
-* Add boilerplate for configuring production-ready settings and deployment.
-
-
-## License
-Feel free to use the code in this repository however you wish. Details are provided in
-[LICENSE.md](LICENSE.md).
 
 
