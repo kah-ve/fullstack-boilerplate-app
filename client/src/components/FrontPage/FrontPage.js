@@ -11,11 +11,11 @@ class FrontPage extends React.Component {
     super(props)
     this.state = {
       response: 'Nothing to Post',
-      admission: 1,
-      name: 'Luther',
-      age: 32,
-      course: 'World Ending 101',
-      department: 'Villainship'
+      date: 1,
+      temperature: 55,
+      precipitation: 30,
+      climate: 'Wet',
+      description: "Very rainy day today isnt it!"
     }
 
     this.get_response = this.get_response.bind(this);
@@ -52,7 +52,7 @@ class FrontPage extends React.Component {
       catch (error) {
         console.error(error);
         this.setState({
-          response: 'error'
+          response: 'Nothing to Post'
         })
       }
     })
@@ -63,11 +63,11 @@ class FrontPage extends React.Component {
 
     sleep(500).then(async () => {
       let value = {
-        'admission': this.state.admission,
-        'name': this.state.name,
-        'age': this.state.age,
-        'course': this.state.course,
-        'department': this.state.department
+        'date': this.state.date,
+        'temperature': this.state.temperature,
+        'precipitation': this.state.precipitation,
+        'climate': this.state.climate,
+        'description': this.state.description
       }
 
       let data = JSON.stringify(value)
@@ -93,11 +93,11 @@ class FrontPage extends React.Component {
     return (
       value_arr.map(element =>
         <div>
-          <span className='identifier'>Admission:</span> {element[0]},
-          <span className='identifier'>Name:</span> {element[1]},
-          <span className='identifier'>Age:</span> {element[2]},
-          <span className='identifier'>Course:</span> {element[3]},
-          <span className='identifier'>Department:</span> {element[4]}</div>
+          <span className='identifier'>Date:</span> {element[0]},
+          <span className='identifier'>Temperature:</span> {element[1]},
+          <span className='identifier'>Precipitation:</span> {element[2]},
+          <span className='identifier'>Climate:</span> {element[3]},
+          <span className='identifier'>Description:</span> {element[4]}</div>
       )
     )
   }
@@ -131,15 +131,15 @@ class InputBox extends React.Component {
   render() {
     return (
       <form type="submit" className="inputFields">
-        <div className="inputBoxes">Admission</div>
+        <div className="inputBoxes">Date</div>
         <input className="inputText" onChange={this.props.handleChange} type="text" name="admission" defaultValue="1" />
-        <div className="inputBoxes">Name</div>
+        <div className="inputBoxes">Temperature</div>
         <input className="inputText" onChange={this.props.handleChange} type="text" name="name" defaultValue="Luther" />
-        <div className="inputBoxes">Age</div>
+        <div className="inputBoxes">Precipitation</div>
         <input className="inputText" onChange={this.props.handleChange} type="text" name="age" defaultValue="32" />
-        <div className="inputBoxes">Course</div>
+        <div className="inputBoxes">Climate</div>
         <input className="inputText" onChange={this.props.handleChange} type="text" name="course" defaultValue="World Ending 101" />
-        <div className="inputBoxes">Department</div>
+        <div className="inputBoxes">Description</div>
         <input className="inputText" onChange={this.props.handleChange} type="text" name="department" defaultValue="Villainship" />
       </form>
     )
