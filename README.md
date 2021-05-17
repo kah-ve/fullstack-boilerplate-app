@@ -60,7 +60,7 @@ Also
 
 into the flask container (named api) and run the command
 
-     tail -f apiLog.log
+     tail -f apiLogs.log
 
 This will give you a live output of the logs in a less cluttered fashion for the backend. 
 
