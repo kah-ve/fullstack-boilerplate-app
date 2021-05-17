@@ -8,3 +8,5 @@ api/__pycache__
 .idea
 .DS_Store
 roadmap.txt
+
+*.log
