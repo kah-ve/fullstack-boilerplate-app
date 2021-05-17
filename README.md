@@ -25,7 +25,7 @@ You can
 
      docker exec -it [container id] bash 
  
-to the postgres container and then run the command 
+to the postgres container (named postgres) and then run the command 
   
      psql -U postgres
   
@@ -53,6 +53,16 @@ In the terminal that you ran
      docker-compose up
   
 on, you can see the containers that are running and the outputs. I use this to see the outputs from a flask. 
+
+Also
+
+     docker exec -it [container id] bash
+
+into the flask container (named api) and run the command
+
+     tail -f apiLog.log
+
+This will give you a live output of the logs in a less cluttered fashion for the backend. 
 
 --------------------------------------------------------
 Below are notes from source repo that provided core boilerplate code for docker-compose.
