@@ -3,6 +3,7 @@ version: "3"
 services:
   api:
     build: api
+    container_name: api
     command: ["flask", "run", "--host=0.0.0.0"]
     volumes:
       - ./api:/backend
@@ -14,6 +15,7 @@ services:
 
   client:
     build: client
+    container_name: client
     volumes:
       - ./client:/frontend
       - node_modules:/frontend/node_modules
