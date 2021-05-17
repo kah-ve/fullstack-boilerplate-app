@@ -87,7 +87,7 @@ class FrontPage extends React.Component {
     })
 
     this.setState({
-      date: this.state.date.toString() + 1,
+      date: this.state.date.toString(),
     })
   }
 
