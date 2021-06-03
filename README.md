@@ -3,9 +3,9 @@
 ![My Image](https://github.com/kah-ve/react-flask-postgresql-in-docker-boilerplate/blob/master/app-preview.png)
 
 
-So far I've built on the boilerplate code from another repo that built out the docker-compose file (minus some things I've since modified). I've hooked up code that communicates through react to flask and postgresql and back.
+This is boilerplate code and also a playground for a full stack app. I've hooked up code that communicates through react to flask and postgresql and back.
 
-All you need to do to run this is clone and build with
+All you need to do to run this is fork then clone and build with
 
       docker-compose build
       
