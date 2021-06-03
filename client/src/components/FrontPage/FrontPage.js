@@ -1,5 +1,6 @@
 import React from "react";
 import "./FrontPage.css";
+import { IoMdTrash } from "react-icons/io";
 
 async function sleep(ms) {
   await new Promise((resolve) => {
@@ -303,11 +304,7 @@ function DataRows(props) {
           </div>
           <div className="trashcan">
             <span onClick={sayhello} className="myicon">
-              <span
-                className="iconify"
-                data-icon="octicon-trashcan"
-                data-inline="false"
-              ></span>
+              <IoMdTrash />
             </span>
           </div>
         </>
