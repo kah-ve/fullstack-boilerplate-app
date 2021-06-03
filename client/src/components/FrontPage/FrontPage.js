@@ -268,38 +268,49 @@ function DataRows(props) {
       }
 
       return (
-        <div className="outputTextFormat" key={getKey()}>
-          <pre
-            className="identifier"
-            style={{ backgroundColor: orangeIfNew[0] }}
-          >
-            {paddedString(element[0])}
-          </pre>
-          <pre
-            className="identifier"
-            style={{ backgroundColor: orangeIfNew[1] }}
-          >
-            {paddedString(element[1])}
-          </pre>
-          <pre
-            className="identifier"
-            style={{ backgroundColor: orangeIfNew[2] }}
-          >
-            {paddedString(element[2])}
-          </pre>
-          <pre
-            className="identifier"
-            style={{ backgroundColor: orangeIfNew[3] }}
-          >
-            {paddedString(element[3])}
-          </pre>
-          <pre
-            className="identifier"
-            style={{ backgroundColor: orangeIfNew[4] }}
-          >
-            {paddedString(element[4])}
-          </pre>
-        </div>
+        <>
+          <div className="outputTextFormat" key={getKey()}>
+            <pre
+              className="identifier"
+              style={{ backgroundColor: orangeIfNew[0] }}
+            >
+              {paddedString(element[0])}
+            </pre>
+            <pre
+              className="identifier"
+              style={{ backgroundColor: orangeIfNew[1] }}
+            >
+              {paddedString(element[1])}
+            </pre>
+            <pre
+              className="identifier"
+              style={{ backgroundColor: orangeIfNew[2] }}
+            >
+              {paddedString(element[2])}
+            </pre>
+            <pre
+              className="identifier"
+              style={{ backgroundColor: orangeIfNew[3] }}
+            >
+              {paddedString(element[3])}
+            </pre>
+            <pre
+              className="identifier"
+              style={{ backgroundColor: orangeIfNew[4] }}
+            >
+              {paddedString(element[4])}
+            </pre>
+          </div>
+          <div className="trashcan">
+            <span onClick={sayhello} className="myicon">
+              <span
+                className="iconify"
+                data-icon="octicon-trashcan"
+                data-inline="false"
+              ></span>
+            </span>
+          </div>
+        </>
       );
     });
 
@@ -319,6 +330,14 @@ function DataRows(props) {
   }
 
   return <div>{outputDataRows(props.rows, props.prevRows)}</div>;
+}
+
+function DeleteRow(id) {
+  console.log(id);
+}
+
+function sayhello() {
+  console.log("Hello");
 }
 
 export default FrontPage;
