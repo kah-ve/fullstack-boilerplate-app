@@ -35,14 +35,24 @@ class Database:
                     f"""(DATE TEXT PRIMARY KEY NOT NULL,"""
                     f"""TEMPERATURE INT NOT NULL,"""
                     f"""PRECIPITATION INT NOT NULL,"""
-                    f"""CLIMATE CHAR(50),"""
-                    f"""DESCRIPTION CHAR(50));"""
+                    f"""CLIMATE TEXT ,"""
+                    f"""DESCRIPTION TEXT );"""
                 )
 
                 cls.table_created = True
 
     @classmethod
+    def __ensure_table_exist(cls):
+        if not cls.table_created:
+            logger.info(f"The table does not exist!")
+            cls.create_table()
+        else:
+            logger.info(f"Table exists.")
+
+    @classmethod
     def insert_data(cls, params):
+        cls.__ensure_table_exist()
+
         con = Database.get_connection()
 
         with con:
@@ -60,6 +70,8 @@ class Database:
 
     @classmethod
     def get_count_by_date(cls, date: str) -> int:
+        cls.__ensure_table_exist()
+
         logger.info(f"Getting count by date...")
 
         con = Database.get_connection()

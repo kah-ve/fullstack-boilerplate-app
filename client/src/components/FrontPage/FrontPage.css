@@ -1,11 +1,23 @@
-#front-page-container {
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  cursor: default;
-  min-width: min-content;
-  min-height: min-content;
+}
+
+#front-page-container {
+  width: 80vw;
+  min-width: 540px;
+  margin-bottom: 100px;
 }
 
 .linkButtons {
@@ -31,6 +43,7 @@
   text-align: center;
   border: 2px solid #4c97c0;
   width: 180px;
+  cursor: pointer;
 }
 
 .theLink:hover,
@@ -79,7 +92,6 @@
   padding: 50px;
   border: 10px solid black;
   border-radius: 5px;
-  width: 915px;
   color: white;
   font-size: 20px;
 
@@ -99,13 +111,7 @@
   border-radius: 5px;
   width: 10;
   color: white;
-
-  text-align: left;
-
-  display: flex;
-  flex-direction: row;
-  align-self: flex-start;
-  
+  margin: 10px;
 }
 
 .inputBoxes:hover {
@@ -123,18 +129,25 @@
 .inputFields {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .inputText {
-  width: 80px;
-  margin-left: 5px;
-  margin-right: 40px;
+  width: 20vw;
+  height: 30px;
+  margin-top: 5px;
+  display: flex;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.long-text {
+  width: 49vw;
 }
 
 .identifier {
-  color:yellow;
+  color: yellow;
   margin: 5px;
   padding: 9px;
   background-color: black;
@@ -144,7 +157,7 @@
   white-space: pre-wrap;
 }
 
-.identifier:hover { 
+.identifier:hover {
   background-color: rgb(184, 109, 109);
 }
 
@@ -155,6 +168,9 @@
   flex-wrap: wrap;
   margin-top: 20px;
   font-size: 14px;
+  background-color: rgb(62, 208, 208);
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .outputTextFormat:first-child {
